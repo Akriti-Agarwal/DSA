@@ -1,41 +1,25 @@
-import java.util.*;
+import java.util.Scanner;
 class sum
 {
+    
+    public void add (int i, int d)
+    {
+        if(i < 1)
+        {
+            System.out.println("The sum is "+d);
+            return ;
+        }
+        add(i-1, d+i);
+    }
     public static void main(String args[])
     {
         Scanner sc= new Scanner(System.in);
-        int i,max=0,s=0,j,t,l=0,z=0;
+        System.out.println("Enter the n");
+        int n = sc.nextInt();   
+        sc.close();
+        sum obj = new sum();
+        int d=0;
+        obj.add(n,0);
         
-        t=10;
-
-        int a[]=new int [10];
-        for(i=0;i<10;i++)
-        {
-            a[i]=sc.nextInt();
-        }
-        for(i=0;i<10;i++)
-        {
-            z=l;
-          
-            s=s+a[i];
-            if(s==t)
-            {
-                
-                s=0;
-                l=i+1;
-             
-                if(l>max)
-                {
-                    max=l;
-                }
-            }
-        }
-        System.out.println(max-z);
-        
-                }
-
-            }
-
-        
-    
-
+    }
+}
